@@ -303,7 +303,7 @@
 
 % ----- Punctuation (class 6) -----
 \Umathcode`, = 6 0 `,    % Latin comma
-\Umathcode`، = 6 0 `،    % arabic comma
+\Umathcode`، = 6 1 `،    % arabic comma
 \Umathcode`. = 6 0 `.    % period
 
 % ----- Binary Operators (class 2, family 0) -----
@@ -1009,25 +1009,24 @@
   \subsectioncounter=0
   %\subsubsectioncounter=0
   \resetcounters{باب}
-    \vskip 2em plus 1em minus 1em
+    \vskip 2em plus 1em minus 1em%
     %%%%%%%%%%%%%%%%%
     \def\tempa{#1}%
     \def\tempc{و}\def\templ{ش}\def\tempr{ي}%
   \ifx\tempa\tempc
-    \centerline{\chaptername\ \rathe{chaptercounter} \hypertarget{\rathe{chaptercounter}}{#2}}%
+    \centerline{\chaptername\ \rathe{chaptercounter} \hypertarget{باب \rathe{chaptercounter}}{#2}}%
   \else\ifx\tempa\templ
-    \rightline{\chaptername\ \rathe{chaptercounter} \hypertarget{\rathe{chaptercounter}}{#2}}%
+    \rightline{\chaptername\ \rathe{chaptercounter} \hypertarget{باب \rathe{chaptercounter}}{#2}}%
   \else\ifx\tempa\tempr
-  \leftline{\chaptername\ \rathe{chaptercounter} \hypertarget{\rathe{chaptercounter}}{#2}}%
+  \leftline{\chaptername\ \rathe{chaptercounter} \hypertarget{باب \rathe{chaptercounter}}{#2}}%
   \else
     \errmessage{mychapter: unknown alignment '#1', use c, l, or r}%
   \fi\fi\fi
    %%%%%%%%%%%%%%%%%
-    \vskip 1.5em plus 0.5em minus 0.5em
-  	\noindent
-  	
-  	  \directlua{
-  local input1 =[=[\rathe{chaptercounter}\ \ {\amiribf\quad]=]   .. "\luaescapestring{\string\hyperlink{\rathe{chaptercounter}}{#2}}" .. [=[}\hfill]=]
+    \vskip 1.5em plus 0.5em minus 0.5em%
+  	\noindent%  	
+\directlua{
+  local input1 =[=[\hbox to 1cm {\rathe{chaptercounter}\hfill}{\amiribf]=]   .. "\luaescapestring{\string\hyperlink{باب \rathe{chaptercounter}}{#2}}" .. [=[}\hfill]=]
   local input2 =[=[\rathe{pageno}]=]
   toc_write(input1, input2) 
   }%
@@ -1046,11 +1045,11 @@
 \def\tempa{#1}%
 \def\tempc{و}\def\templ{ش}\def\tempr{ي}%
 \ifx\tempa\tempc
-\centerline{\sectionname\ \rathe{chaptercounter}-\rathe{sectioncounter} \hypertarget{\rathe{chaptercounter}-\rathe{sectioncounter}}{#2}}%
+\centerline{\sectionname\ \rathe{chaptercounter}-\rathe{sectioncounter} \hypertarget{فصل \rathe{chaptercounter}-\rathe{sectioncounter}}{#2}}%
 \else\ifx\tempa\templ
-\rightline{\sectionname\ \rathe{chaptercounter}-\rathe{sectioncounter} \hypertarget{\rathe{chaptercounter}-\rathe{sectioncounter}}{#2}}%
+\rightline{\sectionname\ \rathe{chaptercounter}-\rathe{sectioncounter} \hypertarget{فصل \rathe{chaptercounter}-\rathe{sectioncounter}}{#2}}%
 \else\ifx\tempa\tempr
-\leftline{\sectionname\ \rathe{chaptercounter}-\rathe{sectioncounter} \hypertarget{\rathe{chaptercounter}-\rathe{sectioncounter}}{#2}}%
+\leftline{\sectionname\ \rathe{chaptercounter}-\rathe{sectioncounter} \hypertarget{فصل \rathe{chaptercounter}-\rathe{sectioncounter}}{#2}}%
 \else
 \errmessage{mychapter: unknown alignment '#1', use c, l, or r}%
 \fi\fi\fi
@@ -1059,7 +1058,7 @@
   	\noindent%
   	
   	  \directlua{
-  local input1 =[=[\quad\quad\rathe{chaptercounter}-\rathe{sectioncounter}\quad]=]   .. "\luaescapestring{\string\hyperlink{\rathe{chaptercounter}-\rathe{sectioncounter}}{#2}}" .. "\string\\dotfill"
+  local input1 =[=[\hbox to 1cm{ }\hbox to 1cm{\rathe{chaptercounter}-\rathe{sectioncounter}\hfill}]=]   .. "\luaescapestring{\string\hyperlink{فصل \rathe{chaptercounter}-\rathe{sectioncounter}}{#2}}" .. "\string\\dotfill"
   local input2 =[=[\rathe{pageno}]=]
   toc_write(input1, input2) 
   }%
@@ -1077,11 +1076,11 @@
 \def\tempa{#1}%
 \def\tempc{و}\def\templ{ش}\def\tempr{ي}%
 \ifx\tempa\tempc
-\centerline{\subsectionname \rathe{chaptercounter}-\rathe{sectioncounter}-\rathe{subsectioncounter} \hypertarget{\rathe{chaptercounter}-\rathe{sectioncounter}-\rathe{subsectioncounter}}{#2}}%
+\centerline{\subsectionname \rathe{chaptercounter}-\rathe{sectioncounter}-\rathe{subsectioncounter} \hypertarget{مبحث \rathe{chaptercounter}-\rathe{sectioncounter}-\rathe{subsectioncounter}}{#2}}%
 \else\ifx\tempa\templ
-\rightline{\subsectionname \rathe{chaptercounter}-\rathe{sectioncounter}-\rathe{subsectioncounter} \hypertarget{\rathe{chaptercounter}-\rathe{sectioncounter}-\rathe{subsectioncounter}}{#2}}%
+\rightline{\subsectionname \rathe{chaptercounter}-\rathe{sectioncounter}-\rathe{subsectioncounter} \hypertarget{مبحث \rathe{chaptercounter}-\rathe{sectioncounter}-\rathe{subsectioncounter}}{#2}}%
 \else\ifx\tempa\tempr
-\leftline{\subsectionname \rathe{chaptercounter}-\rathe{sectioncounter}-\rathe{subsectioncounter} \hypertarget{\rathe{chaptercounter}-\rathe{sectioncounter}-\rathe{subsectioncounter}}{#2}}%
+\leftline{\subsectionname \rathe{chaptercounter}-\rathe{sectioncounter}-\rathe{subsectioncounter} \hypertarget{مبحث \rathe{chaptercounter}-\rathe{sectioncounter}-\rathe{subsectioncounter}}{#2}}%
 \else
 \errmessage{mychapter: unknown alignment '#1', use c, l, or r}%
 \fi\fi\fi
@@ -1090,7 +1089,7 @@
   	\noindent
   	
   	  	  \directlua{
-  local input1 =[=[\ \quad\quad\quad\quad \rathe{chaptercounter}-\rathe{sectioncounter}-\rathe{subsectioncounter}\quad]=]   .. "\luaescapestring{\string\hyperlink{\rathe{chaptercounter}-\rathe{sectioncounter}-\rathe{subsectioncounter}}{#2}}" .. "\string\\dotfill"
+  local input1 =[=[\hbox to 1cm{ }\hbox to 1cm{ }\hbox to 1.3cm {\rathe{chaptercounter}-\rathe{sectioncounter}-\rathe{subsectioncounter}\hfill}]=]   .. "\luaescapestring{\string\hyperlink{مبحث \rathe{chaptercounter}-\rathe{sectioncounter}-\rathe{subsectioncounter}}{#2}}" .. "\string\\dotfill"
   local input2 =[=[\rathe{pageno}]=]
   toc_write(input1, input2) 
   }%
@@ -1758,6 +1757,7 @@ toc_write(input1, input2)
 }
 \Umathchardef\زائد="2"1"002B
 \Umathchardef\ضرب="2"1"2299
+\Umathchardef\على="2"1"005C
 \Umathchardef\زائدةناقصة="2"1"00B1
 \Umathchardef\ناقصةزائدة="2"1"2213
 \let\في=\cdot
@@ -2813,6 +2813,18 @@ tex.sprint([=[\halign to]=] .. converted .. [=[{]=] .. content.. [=[}]=])
 \def\arabicmultiplicationwith[#1]{\amultiplication{\arabicmultiplicationarg}{#1}}
 \def\arabicmultiplicationwithout{\amultiplication{\arabicmultiplicationarg}{}}
 \let\مضروب=\arabicmultiplication
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\يتناسب{%
+	\mathrel{%
+		\mathchoice%
+		{\reflect{$\displaystyle \propto$}}%
+		{\reflect{$\textstyle \propto$}}%
+		{\reflect{$\scriptstyle \propto$}}%
+		{\reflect{$\scriptscriptstyle \propto$}}%
+	}%
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%% comment: Input Buffer Callback (must be at end) %%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
