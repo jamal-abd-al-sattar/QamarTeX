@@ -303,6 +303,7 @@
 
 % ----- Punctuation (class 6) -----
 \Umathcode`, = 6 0 `,    % Latin comma
+\Umathcode`؛ = 6 1 `؛    % arabic doted comma
 \Umathcode`، = 6 1 `،    % arabic comma
 \Umathcode`. = 6 0 `.    % period
 
@@ -959,7 +960,7 @@
 	increment_statement_counter(current_counter_name)
 	}
 	\def\statementcontent{\directlua{tex.sprint(print_statement(current_counter_name))}}%
-	\bigskip\noindent{\amiribf \hypertarget{\statementcontent}{\statementcontent}}%
+	{\amiribf \hypertarget{\statementcontent}{\statementcontent}}%
 }
 \let\عبارةجديدة=\newstatement
 \let\عبارة=\statement
@@ -1150,7 +1151,7 @@
 \def\tempchapter{باب}\def\tempsection{فصل}\def\tempsubsection{مبحث}%
 \ifx\tempa\tempchapter
 \directlua{
-local input1 =[=[\hbox to 1cm { }{\amiribf]=]   .. "\luaescapestring{\string\hyperlink{باب #3}{#3}}" .. [=[}\hfill]=]
+local input1 =[=[\hbox to 1cm{ }{\amiribf]=]   .. "\luaescapestring{\string\hyperlink{باب #3}{#3}}" .. [=[}\hfill]=]
 local input2 =[=[\rathe{pageno}]=]
 toc_write(input1, input2) 
 }%
@@ -1160,7 +1161,7 @@ toc_write(input1, input2)
 \noindent%
 \else\ifx\tempa\tempsection
 \directlua{
-local input1 =[=[\hbox to 2cm { }]=]   .. "\luaescapestring{\string\hyperlink{فصل #3}{#3}}" .. "\string\\dotfill"
+local input1 =[=[\hbox to 2cm{ }]=]   .. "\luaescapestring{\string\hyperlink{فصل #3}{#3}}" .. "\string\\dotfill"
 local input2 =[=[\rathe{pageno}]=]
 toc_write(input1, input2) 
 }%
@@ -1170,7 +1171,7 @@ toc_write(input1, input2)
 \noindent%
 \else\ifx\tempa\tempsubsection
 \directlua{
-local input1 =[=[\hbox to 3.3cm { }]=]   .. "\luaescapestring{\string\hyperlink{مبحث #3}{#3}}" .. "\string\\dotfill"
+local input1 =[=[\hbox to 3.3cm{ }]=]   .. "\luaescapestring{\string\hyperlink{مبحث #3}{#3}}" .. "\string\\dotfill"
 local input2 =[=[\rathe{pageno}]=]
 toc_write(input1, input2) 
 }%
@@ -1186,7 +1187,7 @@ toc_write(input1, input2)
 \def\tempchapter{باب}\def\tempsection{فصل}\def\tempsubsection{مبحث}%
 \ifx\tempa\tempchapter
 \directlua{
-local input1 =[=[\hbox to 1cm { }{\amiribf]=]   .. "\luaescapestring{\string\hyperlink{باب #3}{#3}}" .. [=[}\hfill]=]
+local input1 =[=[\hbox to 1cm{ }{\amiribf]=]   .. "\luaescapestring{\string\hyperlink{باب #3}{#3}}" .. [=[}\hfill]=]
 local input2 =[=[\rathe{pageno}]=]
 toc_write(input1, input2) 
 }%
@@ -1196,7 +1197,7 @@ toc_write(input1, input2)
 \noindent%
 \else\ifx\tempa\tempsection
 \directlua{
-local input1 =[=[\hbox to 2cm { }]=]   .. "\luaescapestring{\string\hyperlink{فصل #3}{#3}}" .. "\string\\dotfill"
+local input1 =[=[\hbox to 2cm{ }]=]   .. "\luaescapestring{\string\hyperlink{فصل #3}{#3}}" .. "\string\\dotfill"
 local input2 =[=[\rathe{pageno}]=]
 toc_write(input1, input2) 
 }%
@@ -1206,7 +1207,7 @@ toc_write(input1, input2)
 \noindent%
 \else\ifx\tempa\tempsubsection
 \directlua{
-local input1 =[=[\hbox to 3.3cm { }]=]   .. "\luaescapestring{\string\hyperlink{مبحث #3}{#3}}" .. "\string\\dotfill"
+local input1 =[=[\hbox to 3.3cm{ }]=]   .. "\luaescapestring{\string\hyperlink{مبحث #3}{#3}}" .. "\string\\dotfill"
 local input2 =[=[\rathe{pageno}]=]
 toc_write(input1, input2) 
 }%
@@ -1222,7 +1223,7 @@ toc_write(input1, input2)
 \def\tempchapter{باب}\def\tempsection{فصل}\def\tempsubsection{مبحث}%
 \ifx\tempa\tempchapter
 \directlua{
-local input1 =[=[\hbox to 1cm { }{\amiribf]=]   .. "\luaescapestring{\string\hyperlink{باب #3}{#3}}" .. [=[}\hfill]=]
+local input1 =[=[\hbox to 1cm{ }{\amiribf]=]   .. "\luaescapestring{\string\hyperlink{باب #3}{#3}}" .. [=[}\hfill]=]
 local input2 =[=[\rathe{pageno}]=]
 toc_write(input1, input2) 
 }%
@@ -1232,7 +1233,7 @@ toc_write(input1, input2)
 \noindent%
 \else\ifx\tempa\tempsection
 \directlua{
-local input1 =[=[\hbox to 2cm { }]=]   .. "\luaescapestring{\string\hyperlink{فصل #3}{#3}}" .. "\string\\dotfill"
+local input1 =[=[\hbox to 2cm{ }]=]   .. "\luaescapestring{\string\hyperlink{فصل #3}{#3}}" .. "\string\\dotfill"
 local input2 =[=[\rathe{pageno}]=]
 toc_write(input1, input2) 
 }%
@@ -1242,7 +1243,7 @@ toc_write(input1, input2)
 \noindent%
 \else\ifx\tempa\tempsubsection
 \directlua{
-local input1 =[=[\hbox to 3.3cm { }]=]   .. "\luaescapestring{\string\hyperlink{مبحث #3}{#3}}" .. "\string\\dotfill"
+local input1 =[=[\hbox to 3.3cm{ }]=]   .. "\luaescapestring{\string\hyperlink{مبحث #3}{#3}}" .. "\string\\dotfill"
 local input2 =[=[\rathe{pageno}]=]
 toc_write(input1, input2) 
 }%
@@ -1321,12 +1322,40 @@ toc_write(input1, input2)
 %%%%%%%%%%%%%%%%%
 \newcount\fnabscount
 \fnabscount=0
+\newtoks\deferredfns
+\newif\ifdeferfn
+\deferfnfalse
+
+\def\startdeferfootnotes{%
+  \deferfntrue
+  \deferredfns={}%
+}
+\def\stopdeferfootnotes{%
+  \deferfnfalse
+  \the\deferredfns
+  \global\deferredfns={}%
+}
+
 \def\autofootnote#1{%
-    \global\advance\fnabscount by 1%
-    \edef\thisabs{\the\fnabscount}%
-    \latelua{record_fn_page(tex.count[0])}%
-    \edef\currentfootnum{\directlua{tex.sprint(reversed_number_to_eastern_arabic(get_footnote_num(\thisabs)))}}%
+  \global\advance\fnabscount by 1%
+  \edef\thisabs{\the\fnabscount}%
+  \latelua{record_fn_page(tex.count[0])}%
+  \edef\currentfootnum{\directlua{tex.sprint(reversed_number_to_eastern_arabic(get_footnote_num(\thisabs)))}}%
+  \ifdeferfn
+    \hyperlink{\thisabs}{${}^{\currentfootnum}$}%
+    \begingroup
+      \edef\x{\endgroup
+        \noexpand\toks0{%
+          \noexpand\vfootnote
+            {\noexpand\hyperlink{\thisabs}{${}^{\currentfootnum}$}}%
+            {\noexpand\hypertarget{\thisabs}{\unexpanded{#1}}}%
+        }%
+      }%
+      \x
+    \global\deferredfns=\expandafter{\the\expandafter\deferredfns\the\toks0}%
+  \else
     \footnote{\hyperlink{\thisabs}{${}^{\currentfootnum}$}}{\hypertarget{\thisabs}{#1}}%
+  \fi
 }
 \let\حاشية=\autofootnote
 %%%%%%%%%%%%%%%%%
@@ -1731,14 +1760,9 @@ toc_write(input1, input2)
 \let\امدد=\span
 \let\حشوخط=\hrulefill
 \let\حشونقاط=\dotfill
-\def\حاجب{\omit\hrule}
-\def\حاجبة{\omit\vrule}
-\let\خط=\hrule
-\let\خطة=\vrule
 \let\قاعدة=\hrule
 \let\عمود=\vrule
 \let\بلاتنسيق=\noalign
-\def\حجاب{\noalign{\hrule}}
 \let\شرطة=\prime
 \let\حذفةسطرية=\ldots
 \let\حذفةأفقية=\cdots
@@ -1764,7 +1788,7 @@ toc_write(input1, input2)
 \def\نقطة#1{\mathaccent"02D9 #1}
 \let\شرطةكسر=\backslash
 \let\إشارةمزدوجة=\doublesigns
-\let\أعمدة=\widetable
+\let\أعمدةرياضية=\widetable
 \let\جدول=\table
 \let\يطابق=\equiv
 \let\يكافئ=\iff
@@ -2325,6 +2349,14 @@ toc_write(input1, input2)
   \noexpand\pdfcolorstackpop
 }
 
+% ============================================================
+%  Plain TeX / pdfTeX color macros
+%  Each \color<name> sets fill+stroke color (rg/RG for pdfmode,
+%  or postscript rgb operator otherwise).
+%  Each \color<name>Inv is the RGB-complement (1-r,1-g,1-b) of it.
+% ============================================================
+
+% ---------- RED / CYAN (complements) ----------
 \edef\colorred{%
   \ifpdfmode
     1 0 0 rg 1 0 0 RG%
@@ -2332,14 +2364,15 @@ toc_write(input1, input2)
     rgb 1 0 0%
   \fi
 }
-\edef\colorblue{%
+\edef\colorcyan{%
   \ifpdfmode
-    0 0 1 rg 0 0 1 RG%
+    0 1 1 rg 0 1 1 RG%
   \else
-    rgb 0 0 1%
+    rgb 0 1 1%
   \fi
 }
 
+% ---------- GREEN / MAGENTA (complements) ----------
 \edef\colorgreen{%
   \ifpdfmode
     0 1 0 rg 0 1 0 RG%
@@ -2347,14 +2380,175 @@ toc_write(input1, input2)
     rgb 0 1 0%
   \fi
 }
+\edef\colormagenta{%
+  \ifpdfmode
+    1 0 1 rg 1 0 1 RG%
+  \else
+    rgb 1 0 1%
+  \fi
+}
+
+% ---------- BLUE / YELLOW (complements) ----------
+\edef\colorblue{%
+  \ifpdfmode
+    0 0 1 rg 0 0 1 RG%
+  \else
+    rgb 0 0 1%
+  \fi
+}
+\edef\coloryellow{%
+  \ifpdfmode
+    1 1 0 rg 1 1 0 RG%
+  \else
+    rgb 1 1 0%
+  \fi
+}
+
+% ---------- BLACK / WHITE (complements) ----------
+\edef\colorblack{%
+  \ifpdfmode
+    0 0 0 rg 0 0 0 RG%
+  \else
+    rgb 0 0 0%
+  \fi
+}
+\edef\colorwhite{%
+  \ifpdfmode
+    1 1 1 rg 1 1 1 RG%
+  \else
+    rgb 1 1 1%
+  \fi
+}
+% ---------- GRAY (self-complementary at 50%) ----------
+\edef\colorgray{%
+  \ifpdfmode
+    0.5 0.5 0.5 rg 0.5 0.5 0.5 RG%
+  \else
+    rgb 0.5 0.5 0.5%
+  \fi
+}
+% ---------- ORANGE / AZURE (complements) ----------
+\edef\colororange{%
+  \ifpdfmode
+    1 0.5 0 rg 1 0.5 0 RG%
+  \else
+    rgb 1 0.5 0%
+  \fi
+}
+\edef\colorazure{%
+  \ifpdfmode
+    0 0.5 1 rg 0 0.5 1 RG%
+  \else
+    rgb 0 0.5 1%
+  \fi
+}
+
+% ---------- PURPLE / LIME-GREEN (complements) ----------
+\edef\colorpurple{%
+  \ifpdfmode
+    0.5 0 0.5 rg 0.5 0 0.5 RG%
+  \else
+    rgb 0.5 0 0.5%
+  \fi
+}
+\edef\colorlimegreen{%
+  \ifpdfmode
+    0.5 1 0.5 rg 0.5 1 0.5 RG%
+  \else
+    rgb 0.5 1 0.5%
+  \fi
+}
+
+% ---------- BROWN / STEEL-BLUE (complements) ----------
+\edef\colorbrown{%
+  \ifpdfmode
+    0.6 0.3 0.1 rg 0.6 0.3 0.1 RG%
+  \else
+    rgb 0.6 0.3 0.1%
+  \fi
+}
+\edef\colorsteelblue{%
+  \ifpdfmode
+    0.4 0.7 0.9 rg 0.4 0.7 0.9 RG%
+  \else
+    rgb 0.4 0.7 0.9%
+  \fi
+}
+
+% ---------- PINK / DARK-TEAL (complements) ----------
+\edef\colorpink{%
+  \ifpdfmode
+    1 0.75 0.8 rg 1 0.75 0.8 RG%
+  \else
+    rgb 1 0.75 0.8%
+  \fi
+}
+\edef\colordarkteal{%
+  \ifpdfmode
+    0 0.25 0.2 rg 0 0.25 0.2 RG%
+  \else
+    rgb 0 0.25 0.2%
+  \fi
+}
+
+% ---------- TEAL / MAROON (complements) ----------
+\edef\colorteal{%
+  \ifpdfmode
+    0 0.5 0.5 rg 0 0.5 0.5 RG%
+  \else
+    rgb 0 0.5 0.5%
+  \fi
+}
+\edef\colormaroon{%
+  \ifpdfmode
+    1 0.5 0.5 rg 1 0.5 0.5 RG%
+  \else
+    rgb 1 0.5 0.5%
+  \fi
+}
+
+% ---------- NAVY / GOLD (complements) ----------
+\edef\colornavy{%
+  \ifpdfmode
+    0 0 0.5 rg 0 0 0.5 RG%
+  \else
+    rgb 0 0 0.5%
+  \fi
+}
+\edef\colorgold{%
+  \ifpdfmode
+    1 1 0.5 rg 1 1 0.5 RG%
+  \else
+    rgb 1 1 0.5%
+  \fi
+}
 \def\changecolor#1#2{\hbox{\begingroup\color{#1}#2\endgroup}}
 
 
 %%%%%%%%%%%%%%%%%
-\let\colorأزرق=\colorblue
 \let\colorأحمر=\colorred
+\let\colorمائي=\colorcyan
 \let\colorأخضر=\colorgreen
+\let\colorفوشية=\colormagenta
+\let\colorأزرق=\colorblue
+\let\colorأصفر=\coloryellow
+\let\colorأسود=\colorblack
+\let\colorأبيض=\colorwhite
+\let\colorأرجواني=\colorpurple
+\let\colorليموني=\colorlimegreen
+\let\colorرمادي=\colorgray
+\let\colorسماوي=\colorazure
+\let\colorبرتقالي=\colororange
+\let\colorفيروزي=\colorteal
+\let\colorعنابي=\colormaroon
+\let\colorوردي=\colorpink
+\let\colorبني=\colorbrown
+\let\colorفيروزيءغامق=\colordarkteal
+\let\colorأزرقءفولاذي=\colorsteelblue
+\let\colorنيلي=\colornavy
+\let\colorذهبي=\colorgold
 \let\لون=\changecolor
+\let\أعداللون=\resetcolor
 %%%%%%%%%%%%%%%%% comment:  ألوان %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%% comment:  ألوان %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2825,6 +3019,138 @@ tex.sprint([=[\halign to]=] .. converted .. [=[{]=] .. content.. [=[}]=])
 		{\reflect{$\scriptscriptstyle \propto$}}%
 	}%
 }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%boxes and colored boxes%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\long\def\normalboxed#1{%
+  \vbox{\hrule height2pt
+    \hbox{\vrule width2pt\kern4pt
+      \vbox{\kern4pt\hbox{#1}\kern4pt\vskip2pt}
+      \kern4pt\vrule width2pt}
+    \hrule height2pt}}
+
+\long\def\fixedboxed#1#2{%
+  \vbox{\hrule height2pt
+    \hbox{\vrule width2pt\kern4pt
+      \vbox{\kern4pt
+        \hsize=\dimexpr#1-12pt\relax
+        \vbox{\noindent #2\unskip}%
+        \kern4pt\vskip2pt
+      }%
+      \kern4pt\vrule width2pt}%
+    \hrule height2pt}}
+
+\long\def\arabicfixedboxed#1#2{%
+  \directlua{%
+    local input1 = '\luaescapestring{\unexpanded{#1}}'
+    local input2 = '\luaescapestring{\unexpanded{#2}}'
+    local converted = arabic_to_western_unit(reverse_digit_sequences(input1))
+    tex.sprint([=[\fixedboxed{]=] .. converted .. [=[}{]=] .. input2.. [=[}]=])
+  }%
+}   
+
+    
+\long\def\boxed{\futurelet\boxednext\boxedcheck}
+\long\def\boxedcheck{%
+  \ifx\boxednext[%
+    \let\boxednext\boxedwith%
+  \else
+    \let\boxednext\boxedwithout%
+  \fi
+  \boxednext}
+\long\def\boxedwith[#1]#2{\startdeferfootnotes\arabicfixedboxed{#1}{#2}\stopdeferfootnotes}
+\long\def\boxedwithout#1{\startdeferfootnotes\normalboxed{#1}\stopdeferfootnotes}
+
+\let\إطار=\boxed
+
+
+
+
+\long\def\colorednormalboxed#1#2{%
+  \vbox{
+    {\color{#1}\hrule height2pt}%
+    \hbox{{\color{#1}\vrule width2pt}\kern4pt
+      \vbox{\kern4pt\hbox{#2}\kern4pt\vskip2pt}
+      \kern4pt{\color{#1}\vrule width2pt}}%
+    {\color{#1}\hrule height2pt}%
+  }}
+  
+  
+\long\def\coloredfixedboxed#1#2#3{%
+  \vbox{
+    {\color{#2}\hrule height2pt}%
+    \hbox{{\color{#2}\vrule width2pt}\kern4pt
+      \vbox{\kern4pt
+        \hsize=\dimexpr#1-12pt\relax
+        \vbox{\noindent #3\unskip}%
+        \kern4pt\vskip2pt
+      }%
+      \kern4pt{\color{#2}\vrule width2pt}}%
+    {\color{#2}\hrule height2pt}%
+  }}
+  
+  
+\long\def\arabiccoloredfixedboxed#1#2#3{%
+  \directlua{%
+    local input1 = '\luaescapestring{\unexpanded{#1}}'
+    local input2 = '\luaescapestring{\unexpanded{#2}}'
+    local input3 = '\luaescapestring{\unexpanded{#3}}'
+    local converted = arabic_to_western_unit(reverse_digit_sequences(input1))
+    tex.sprint([=[\string\coloredfixedboxed{]=] .. converted .. [=[}{]=] .. input2.. [=[}{]=] .. input3.. [=[}]=])
+  }%
+}   
+  
+
+
+\long\def\coloredboxed{\futurelet\coloredboxednext\coloredboxedcheck}
+\long\def\coloredboxedcheck{%
+  \ifx\coloredboxednext[%
+    \let\coloredboxednext\coloredboxedwith%
+  \else
+    \let\coloredboxednext\coloredboxedwithout%
+  \fi
+  \coloredboxednext}
+\long\def\coloredboxedwith[#1]#2#3{\startdeferfootnotes\arabiccoloredfixedboxed{#1}{#2}{#3}\stopdeferfootnotes}
+\long\def\coloredboxedwithout#1#2{\startdeferfootnotes\colorednormalboxed{#1}{#2}\stopdeferfootnotes}
+
+\let\إطارملون=\coloredboxed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%% comment: multiple coloumns %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%% comment: multiple coloumns %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%% comment: Input Buffer Callback (must be at end) %%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

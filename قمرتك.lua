@@ -806,7 +806,7 @@ function increment_statement_counter(name)
         tex.error("العبارة " .. name .. " ليس لها عداد")
         return
     end 
-    tex.sprint("\\advance\\"..counters[name].. " by 1")
+    tex.sprint("\\global\\advance\\"..counters[name].. " by 1")
 end
 
 function print_statement(name)
