@@ -1676,14 +1676,14 @@ toc_write(input1, input2)
 }
 
 
-\def\واصلة#1{%
+\def\واصل#1{%
   \ifmmode
 	\overline{#1}
   \else
     $\overline{\hbox{#1}}$%
   \fi
 }
-\def\واصل#1{%
+\def\واصلة#1{%
   \ifmmode
 	\underline{#1}
   \else
@@ -1726,7 +1726,7 @@ toc_write(input1, input2)
 \def\closedintegralwithout{\oint_{\closedintegralarg}}
 
 
-\def\معقوفةفوق#1{%
+\def\معقوف#1{%
     \mathop{%
         \mathchoice%
         {\reflect{\hbox{\mathdir TLT$\displaystyle{\overbrace{\reflect{\mathdir TRT$\displaystyle#1$}}}$}}}%
@@ -1736,7 +1736,7 @@ toc_write(input1, input2)
     }
 }
 
-\def\معقوفةتحت#1{%
+\def\معقوفة#1{%
     \mathop{%
         \mathchoice%
         {\reflect{\hbox{\mathdir TLT$\displaystyle{\underbrace{\reflect{\mathdir TRT$\displaystyle#1$}}}$}}}%
